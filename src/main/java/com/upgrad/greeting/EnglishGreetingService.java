@@ -1,6 +1,7 @@
 package com.upgrad.greeting;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,7 +15,7 @@ public class EnglishGreetingService implements GreetingService{
 
     //Constructor injection
     @Autowired
-    public EnglishGreetingService(TimeService timeService) {
+    public EnglishGreetingService(@Qualifier("timeService24hourFormat") TimeService timeService) {
         this.timeService = timeService;
     }
 
