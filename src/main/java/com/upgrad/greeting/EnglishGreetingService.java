@@ -11,10 +11,17 @@ public class EnglishGreetingService implements GreetingService{
     public TimeService getTimeService() {
         return timeService;
     }
+
+    //Constructor injection
+    @Autowired
+    public EnglishGreetingService(TimeService timeService) {
+        this.timeService = timeService;
+    }
+
     //Setter injection
     //Here also this works cuz we are injection dependency on here
     //So doesn't matter if we put in property or here in this case
-    @Autowired
+    //@Autowired
     public void setTimeService(TimeService timeService) {
         this.timeService = timeService;
     }
