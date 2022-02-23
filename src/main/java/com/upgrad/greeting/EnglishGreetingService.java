@@ -5,13 +5,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EnglishGreetingService implements GreetingService{
-    @Autowired
+
     private TimeService timeService;
 
     public TimeService getTimeService() {
         return timeService;
     }
-
+    //Setter injection
+    //Here also this works cuz we are injection dependency on here
+    //So doesn't matter if we put in property or here in this case
+    @Autowired
     public void setTimeService(TimeService timeService) {
         this.timeService = timeService;
     }
